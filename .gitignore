@@ -3,3 +3,4 @@ personal_access_token.txt
 pdfs/dms
 pdfs/sdm
 
+*.sqlite3

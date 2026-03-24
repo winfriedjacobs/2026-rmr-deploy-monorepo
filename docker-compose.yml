@@ -1,7 +1,7 @@
 services:
-  pdf-reports:
+  prod:
     image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
-    container_name: rmr-pdf-reports
+    container_name: rmr-pdf-reports-prod
     restart: no # unless-stopped
 
     volumes:
@@ -13,8 +13,21 @@ services:
       DB_USER: system
       DB_PASSWORD: DeinSicheresPasswort123
 
-    # env_file:
-    #   - .env.production
+
+
+  dev:
+    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
+    container_name: rmr-pdf-reports-dev
+    restart: no # unless-stopped
+
+    volumes:
+      - ./pdfs:/app/pdfs
+      - ./sdm_backend_4a.sqlite3:/app/sdm_backend_4a.sqlite3
+
+    environment:
+      DB_TYPE: sqlite
+      DB_PATH: sdm_backend_4a.sqlite3
+
 
     # Optional: Map ports if the app has a web interface (e.g., Host 8080 to Container 80)
     # ports:
@@ -22,3 +35,5 @@ services:
     # Optional: Add environment variables if the image requires them
     # environment:
     #   - NODE_ENV=production
+
+
