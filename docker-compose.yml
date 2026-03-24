@@ -1,0 +1,24 @@
+services:
+  pdf-reports:
+    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
+    container_name: rmr-pdf-reports
+    restart: no # unless-stopped
+
+    volumes:
+      - ./pdfs:/app/pdfs
+
+    environment:
+      DB_TYPE: oracle
+      DB_CONNECT_STRING: fedora-w540/FREEPDB1
+      DB_USER: system
+      DB_PASSWORD: DeinSicheresPasswort123
+
+    # env_file:
+    #   - .env.production
+
+    # Optional: Map ports if the app has a web interface (e.g., Host 8080 to Container 80)
+    # ports:
+    #   - "8080:80"
+    # Optional: Add environment variables if the image requires them
+    # environment:
+    #   - NODE_ENV=production

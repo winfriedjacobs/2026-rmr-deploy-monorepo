@@ -1,0 +1,32 @@
+### Anleitung hier: 
+- https://docs.github.com/de/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+
+Melde dich mit der CLI für deinen Containertyp beim Container registry-Dienst unter ghcr.io an.
+
+```
+echo $RMR_PACKAGE_PAT | docker login ghcr.io -u USERNAME --password-stdin
+```
+
+
+---
+
+### Image Pull Location
+
+The Docker images built by the CI/CD workflow are pushed to the **GitHub Container Registry (GHCR)**.
+
+You can pull the latest image using the following command:
+
+```bash
+docker pull ghcr.io/winfriedjacobs/2026-rmr-pdfreports:main
+```
+
+#### Details:
+- **Registry**: `ghcr.io`
+- **Repository**: `winfriedjacobs/2026-rmr-pdfreports`
+- **Tags**:
+  - `main`: Reflects the latest code from the `main` branch.
+  - `feature-restart-2025`: Reflects the latest code from the `feature/restart-2025` branch.
+  - Specific commit SHA tags are also generated for each build.
+
+You can view all available images and tags in your GitHub repository under the **"Packages"** section:
+`https://github.com/winfriedjacobs/2026-rmr-pdfreports/pkgs/container/2026-rmr-pdfreports`
