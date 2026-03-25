@@ -5,7 +5,7 @@ services:
     restart: no # unless-stopped
 
     volumes:
-      - ./pdfs:/app/pdfs
+      - ./pdfs:/app/pdfs:z  # :z for SELinux systems
 
     environment:
       DB_TYPE: oracle
@@ -21,8 +21,8 @@ services:
     restart: no # unless-stopped
 
     volumes:
-      - ./pdfs:/app/pdfs
-      - ./sdm_backend_4a.sqlite3:/app/sdm_backend_4a.sqlite3
+      - ./pdfs:/app/pdfs:z  # :z for SELinux systems
+      - ./sdm_backend_4a.sqlite3:/app/sdm_backend_4a.sqlite3:z  # :z for SELinux systems
 
     environment:
       DB_TYPE: sqlite
