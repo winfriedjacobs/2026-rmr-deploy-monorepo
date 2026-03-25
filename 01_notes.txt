@@ -30,3 +30,11 @@ docker pull ghcr.io/winfriedjacobs/2026-rmr-pdfreports:main
 
 You can view all available images and tags in your GitHub repository under the **"Packages"** section:
 `https://github.com/winfriedjacobs/2026-rmr-pdfreports/pkgs/container/2026-rmr-pdfreports`
+
+
+---
+
+### Download/extract docker images to a local folder (and reload it)
+- "how can I download a docker image to a specific download folder"
+- https://grok.com/share/c2hhcmQtMg_27f23fd1-621d-4365-afb4-fb278e5a2fd0
+

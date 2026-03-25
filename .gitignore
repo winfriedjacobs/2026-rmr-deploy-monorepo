@@ -4,3 +4,7 @@ pdfs/dms
 pdfs/sdm
 
 *.sqlite3
+
+*.tar
+*.tar.gz
+*.tar.xz
