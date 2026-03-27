@@ -8,3 +8,5 @@ pdfs/sdm
 *.tar
 *.tar.gz
 *.tar.xz
+
+.idea
