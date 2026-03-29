@@ -1,0 +1,113 @@
+2026-03-27 23:55:52,439 [   1513]   WARN - #c.i.m.l.t.AIAssistantTelemetryExporterKt - No Langfuse auth string found.
+2026-03-27 23:55:52,969 [   2043]   WARN - c.i.o.u.r.overrides - Conflicting registry key definition for key ide.exceptions.show.interactive: it was defined by plugin com.intellij but redefined by plugin com.intellij. Consider adding overrides="true" for one of the plugins, see the documentation for com.intellij.openapi.util.registry.RegistryKeyBean.overrides for more details.
+2026-03-27 23:55:53,233 [   2307]   WARN - c.i.o.u.r.overrides - Conflicting registry key definition for key completion.cloud.enableCompletionInCommitMessage: it was defined by plugin org.jetbrains.completion.full.line but redefined by plugin org.jetbrains.completion.full.line. Consider adding overrides="true" for one of the plugins, see the documentation for com.intellij.openapi.util.registry.RegistryKeyBean.overrides for more details.
+2026-03-27 23:55:54,114 [   3188]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/sassDefault.xml
+2026-03-27 23:55:54,114 [   3188]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/SqlDefault.xml
+2026-03-27 23:55:54,175 [   3249]   WARN - #c.i.o.e.c.i.EditorColorsManagerImpl - resource not found: colorSchemes/SqlDarcula.xml
+2026-03-27 23:56:10,029 [  19103]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,033 [  19107]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,038 [  19112]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,042 [  19116]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,042 [  19116]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,044 [  19118]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:10,044 [  19118]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported foreignObject
+2026-03-27 23:56:11,122 [  20196]   WARN - #c.i.s.SpellCheckerManager - Couldn't load dictionary vue.dic with loader 'class org.jetbrains.vuejs.spellchecker.VueSpellcheckingDictionaryProvider'
+2026-03-27 23:56:20,302 [  29376]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate: libdnf._
+2026-03-27 23:56:21,612 [  30686]   WARN - #c.i.c.ComponentStoreImpl - Scheme file "Project_Default.xml" is not loaded because defines duplicated name "Project Default"
+2026-03-27 23:56:23,093 [  32167]   WARN - #c.j.p.s.s.PySkeletonRefresher - Some skeletons failed to generate: libdnf._
+2026-03-27 23:57:03,985 [  73059] SEVERE - #c.i.i.shutdown - Application Application (RA allowed) (exit in progress): attempt to synchronously wait our own completion
+java.lang.Throwable
+	at com.intellij.ide.ShutdownKt.cancelAndJoinBlocking(shutdown.kt:93)
+	at com.intellij.ide.ShutdownKt.cancelAndJoinBlocking(shutdown.kt:39)
+	at com.intellij.openapi.application.impl.ApplicationImpl.disposeContainer(ApplicationImpl.java:276)
+	at com.intellij.openapi.application.impl.ApplicationImpl.destructApplication(ApplicationImpl.java:846)
+	at com.intellij.openapi.application.impl.ApplicationImpl.doExit(ApplicationImpl.java:742)
+	at com.intellij.openapi.application.impl.ApplicationImpl.exit(ApplicationImpl.java:727)
+	at com.intellij.openapi.application.impl.ApplicationImpl.exit(ApplicationImpl.java:716)
+	at com.intellij.openapi.application.ex.ApplicationEx.exit(ApplicationEx.java:65)
+	at com.intellij.openapi.wm.impl.CloseProjectWindowHelper.quitApp(CloseProjectWindowHelper.kt:103)
+	at com.intellij.openapi.wm.impl.CloseProjectWindowHelper.windowClosing$lambda$0(CloseProjectWindowHelper.kt:82)
+	at com.intellij.openapi.application.WriteIntentReadAction.lambda$run$0(WriteIntentReadAction.java:24)
+	at com.intellij.openapi.application.impl.AppImplKt$rethrowCheckedExceptions$2.invoke(appImpl.kt:126)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.doRunWriteIntentReadAction(NestedLocksThreadingSupport.kt:736)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.runPreventiveWriteIntentReadAction(NestedLocksThreadingSupport.kt:710)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.runWriteIntentReadAction(NestedLocksThreadingSupport.kt:664)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteIntentReadAction(ApplicationImpl.java:1185)
+	at com.intellij.openapi.application.WriteIntentReadAction.compute(WriteIntentReadAction.java:55)
+	at com.intellij.openapi.application.WriteIntentReadAction.run(WriteIntentReadAction.java:23)
+	at com.intellij.openapi.wm.impl.CloseProjectWindowHelper.windowClosing(CloseProjectWindowHelper.kt:65)
+	at com.intellij.openapi.wm.impl.ProjectFrameHelper.windowClosing(ProjectFrameHelper.kt:596)
+	at com.intellij.openapi.wm.impl.WindowCloseListener.windowClosing$lambda$0(ProjectFrameHelper.kt:643)
+	at com.intellij.concurrency.ThreadContext.installThreadContext(threadContext.kt:305)
+	at com.intellij.concurrency.ThreadContext.installThreadContext$default(threadContext.kt:303)
+	at com.intellij.openapi.wm.impl.WindowCloseListener.windowClosing(ProjectFrameHelper.kt:642)
+	at java.desktop/java.awt.AWTEventMulticaster.windowClosing(AWTEventMulticaster.java:359)
+	at java.desktop/java.awt.AWTEventMulticaster.windowClosing(AWTEventMulticaster.java:359)
+	at java.desktop/java.awt.AWTEventMulticaster.windowClosing(AWTEventMulticaster.java:359)
+	at java.desktop/java.awt.AWTEventMulticaster.windowClosing(AWTEventMulticaster.java:359)
+	at java.desktop/java.awt.Window.processWindowEvent(Window.java:2128)
+	at java.desktop/javax.swing.JFrame.processWindowEvent(JFrame.java:298)
+	at java.desktop/java.awt.Window.processEvent(Window.java:2087)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5049)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2823)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4877)
+	at com.intellij.openapi.wm.impl.customFrameDecorations.header.CustomHeader.close(CustomHeader.kt:253)
+	at com.intellij.openapi.wm.impl.customFrameDecorations.header.CustomHeader$Companion$createCloseAction$1.invoke(CustomHeader.kt:63)
+	at com.intellij.openapi.wm.impl.customFrameDecorations.header.CustomHeader$Companion$createCloseAction$1.invoke(CustomHeader.kt:63)
+	at com.intellij.openapi.wm.impl.customFrameDecorations.header.CustomHeader$CustomFrameAction.actionPerformed(CustomHeader.kt:257)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2314)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:407)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:299)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:299)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6679)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3394)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6444)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5049)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4877)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4963)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4577)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4518)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2823)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4877)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:783)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:728)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:722)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:755)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:753)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:752)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.kt:664)
+	at com.intellij.ide.IdeEventQueue.dispatchMouseEvent(IdeEventQueue.kt:570)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent$lambda$2(IdeEventQueue.kt:508)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.doRunWriteIntentReadAction(NestedLocksThreadingSupport.kt:736)
+	at com.intellij.platform.locking.impl.NestedLocksThreadingSupport.runPreventiveWriteIntentReadAction(NestedLocksThreadingSupport.kt:710)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.kt:508)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$0$0$0$0(IdeEventQueue.kt:337)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:901)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$0$0$0(IdeEventQueue.kt:336)
+	at com.intellij.ide.IdeEventQueueKt.performActivity$lambda$1(IdeEventQueue.kt:1065)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:117)
+	at com.intellij.ide.IdeEventQueueKt.performActivity(IdeEventQueue.kt:1065)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$0(IdeEventQueue.kt:331)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.kt:371)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:207)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:128)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:117)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:105)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:92)
+2026-03-27 23:57:03,991 [  73065] SEVERE - #c.i.i.shutdown - PyCharm 2025.3.3  Build #PY-253.31033.139
+2026-03-27 23:57:03,991 [  73065] SEVERE - #c.i.i.shutdown - JDK: 21.0.10; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
+2026-03-27 23:57:03,991 [  73065] SEVERE - #c.i.i.shutdown - OS: Linux
+2026-03-27 23:57:03,991 [  73065] SEVERE - #c.i.i.shutdown - Last Action: 

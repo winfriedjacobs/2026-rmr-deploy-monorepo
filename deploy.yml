@@ -1,0 +1,89 @@
+---
+- name: Deploy Docker Compose App
+  hosts: my_vms
+  become: yes
+  vars:
+    project_path: "/opt/rmr-pdf-reports"
+    local_path: "."
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Install dependencies for Docker
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - python3-pip
+          - python3-setuptools
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Docker Engine
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure Docker service is started and enabled
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Create project directory
+      file:
+        path: "{{ project_path }}"
+        state: directory
+        mode: '0755'
+
+    - name: Create pdfs directory
+      file:
+        path: "{{ project_path }}/pdfs"
+        state: directory
+        mode: '0777'
+
+    - name: Copy docker-compose.yml to the VM
+      copy:
+        src: "{{ local_path }}/docker-compose.yml"
+        dest: "{{ project_path }}/docker-compose.yml"
+        mode: '0644'
+
+    - name: Copy sdm_backend_4a.sqlite3 to the VM (for dev service)
+      copy:
+        src: "{{ local_path }}/sdm_backend_4a.sqlite3"
+        dest: "{{ project_path }}/sdm_backend_4a.sqlite3"
+        mode: '0644'
+
+    - name: Run Docker Compose (Pull and Start Services)
+      shell:
+        cmd: docker compose up -d
+        chdir: "{{ project_path }}"
+      register: compose_output
+
+    - name: Show Docker Compose output
+      debug:
+        var: compose_output.stdout_lines
