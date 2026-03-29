@@ -18,7 +18,7 @@ services:
   dev:
     image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
     container_name: rmr-pdf-reports-dev
-    restart: no # unless-stopped
+    # restart: no # unless-stopped
 
     volumes:
       - ./pdfs:/app/pdfs:z  # :z for SELinux systems
