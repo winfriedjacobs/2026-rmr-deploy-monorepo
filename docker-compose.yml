@@ -1,6 +1,6 @@
 services:
   prod:
-    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
+    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:main
     container_name: rmr-pdf-reports-prod
     restart: no # unless-stopped
 
@@ -16,7 +16,7 @@ services:
 
 
   dev:
-    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:feature-restart-2025
+    image: ghcr.io/winfriedjacobs/2026-rmr-pdfreports:main
     container_name: rmr-pdf-reports-dev
     # restart: no # unless-stopped
 
