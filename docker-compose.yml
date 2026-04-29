@@ -1,7 +1,7 @@
 services:
-  prod:
-    image: ghcr.io/winfriedjacobs/2026-rmr-monorepo/web-rmr-pdfs:main
-    container_name: web-rmr-pdfs-prod
+  web-rmr-pdfs-prod:
+    image: ghcr.io/winfriedjacobs/2026-rmr-monorepo/web-rmr-pdfs:latest
+    # image: ghcr.io/winfriedjacobs/2026-rmr-monorepo/web-rmr-pdfs:sha-b4493de892ef1eadad15b8d3b47e7051213f420d
     restart: no # unless-stopped
 
     volumes:
@@ -13,24 +13,38 @@ services:
       DB_USER: system
       DB_PASSWORD: DeinSicheresPasswort123
 
+    # No ports exposed to host, only internal port 3000
+
+    deploy:
+      replicas: 4
+      endpoint_mode: dnsrr
+
+
+  # web-rmr-pdfs-dev:
+  #   image: ghcr.io/winfriedjacobs/2026-rmr-monorepo/web-rmr-pdfs:main
+  #   container_name: web-rmr-pdfs-dev
+  #   # restart: no # unless-stopped
+
+  #   volumes:
+  #     - ./pdfs:/app/pdfs:z  # :z for SELinux systems
+  #     - ./sdm_backend_4a.sqlite3:/app/sdm_backend_4a.sqlite3:z  # :z for SELinux systems
+
+  #   environment:
+  #     DB_TYPE: sqlite
+  #     DB_PATH: sdm_backend_4a.sqlite3
+
+  #   ports:
+  #     - "8000:3000"
+  #   # Optional: Add environment variables if the image requires them
+  #   # environment:
+  #   #   - NODE_ENV=production
+
+
+  nginx-proxy:
+    image: nginx:alpine
     ports:
-      - "3000:3000"
-
-  dev:
-    image: ghcr.io/winfriedjacobs/2026-rmr-monorepo/web-rmr-pdfs:main
-    container_name: web-rmr-pdfs-dev
-    # restart: no # unless-stopped
-
+      - "8000:80"
     volumes:
-      - ./pdfs:/app/pdfs:z  # :z for SELinux systems
-      - ./sdm_backend_4a.sqlite3:/app/sdm_backend_4a.sqlite3:z  # :z for SELinux systems
-
-    environment:
-      DB_TYPE: sqlite
-      DB_PATH: sdm_backend_4a.sqlite3
-
-    ports:
-      - "3000:3000"
-    # Optional: Add environment variables if the image requires them
-    # environment:
-    #   - NODE_ENV=production
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web-rmr-pdfs-prod
